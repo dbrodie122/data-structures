@@ -44,6 +44,20 @@ describe('linkedList', function() {
     expect(linkedList.contains(6)).to.equal(false);
   });
 
+  it('should accept insertions of negative values', function() {
+    linkedList.addToTail(-5);
+    linkedList.addToTail(-16);
+    expect(linkedList.contains(-5)).to.equal(true);
+    expect(linkedList.contains(-16)).to.equal(true);
+    expect(linkedList.contains(-4)).to.equal(false);
+  });
+
+  it('should accept insertions of string values', function() {
+    linkedList.addToTail('apple');
+    linkedList.addToTail('pie');
+    expect(linkedList.contains('apple')).to.equal(true);
+  });
+
   it('should not contain a value that was removed', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);
